@@ -1,0 +1,76 @@
+<?php
+
+	include_once "../../inc/core.php";
+	include_once "../../inc/srvr.php";
+	$cnn = new PDO("mysql:host={$host};dbname={$db}", $unameroot, $pw);
+
+	try {
+		$companyname	= isset($_GET['companyname']) ? $_GET['companyname'] : die('ERROR: Company not found.');
+		$fullname		= isset($_GET['fullname']) ? $_GET['fullname'] : die('ERROR: Name not found.');
+		$email			= isset($_GET['email']) ? $_GET['email'] : die('ERROR: Email not found.');
+		$phone			= isset($_GET['phone']) ? $_GET['phone'] : die('ERROR: Phone not found.');
+
+		include_once "../../inc/signup/autogen.php";
+		$qry_insert = "INSERT INTO tbl_sysuser SET 
+				usercode=:idx, 
+				img_url=:imgurl, 
+				username=:younicknamex, 
+				fullname=:fullname, 
+				lname=:lname, 
+				fname=:fname, 
+				mname=:mname, 
+				cmpny=:company, 
+				uemail=:xemail, 
+				umobileno=:xphone, 
+				passcode=:passcode1x, 
+				ulevpos=4, 
+				xposition=:xposition, 
+				address=:address, 
+				ustatz=1, 
+				gogfirstime=0, 
+				pin=:pin"
+			;
+		$stmt_insert = $cnn->prepare($qry_insert);
+		$imgurl = "https://lh3.googleusercontent.com/ogw/ADea4I5iJPqPFUtBwoi7LcHYbn0H6wxs5tb_xRn6LSml=s32-c-mo";
+		$getusername = explode('@',$email);
+		$younickname = $getusername[0];
+		$urlmail = $getusername[1];
+		$permitted_chars2 = '0123456789';
+		$pin = substr(str_shuffle($permitted_chars2), 0, 6);
+		$passcode1 = md5($pin);
+		$xposition = "Client";
+		$lname = $fullname;
+		$fname = $fullname;
+		$mname = $fullname;
+		$address = "Address";
+		$stmt_insert->bindParam(':idx', $fromidted);
+		$stmt_insert->bindParam(':imgurl', $imgurl);
+		$stmt_insert->bindParam(':younicknamex', $younickname);
+		$stmt_insert->bindParam(':fullname', $fullname);
+		$stmt_insert->bindParam(':lname', $lname);
+		$stmt_insert->bindParam(':fname', $fname);
+		$stmt_insert->bindParam(':mname', $mname);
+		$stmt_insert->bindParam(':company', $companyname);
+		$stmt_insert->bindParam(':xemail', $email);
+		$stmt_insert->bindParam(':xphone', $phone);
+		$stmt_insert->bindParam(':passcode1x', $passcode1);
+		$stmt_insert->bindParam(':xposition', $xposition);
+		$stmt_insert->bindParam(':address', $address);
+		$stmt_insert->bindParam(':pin', $pin);
+		$stmt_insert->execute();
+
+		// the message
+		$msg =	"Click the link below to login to the portal.\nhttps://dev.alphaphpn.com/whisp\nUsername: {$younickname}\nTemporary Password: {$pin}\nTo secure your account, kindly change your password immediately.\nClient ID: {$fromidted}
+		";
+
+		// use wordwrap() if lines are longer than 70 characters
+		$msg = wordwrap($msg,70);
+
+		// send email
+		mail("{$email}","Whisp Credential New Account",$msg);
+
+		$err_msg = "Account successfully registered. Kindly check your email inbox/spam for your credential.";
+		echo "<script>alert('{$err_msg}'); window.open('//{$urlmail}','_self')</script>";
+	} catch (PDOException $exception) {
+		die('ERROR: ' . $exception->getMessage());
+	}

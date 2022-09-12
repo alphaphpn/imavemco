@@ -1,0 +1,13 @@
+/** Custom Style **/
+
+#loan-apply .left-img-wide-bg-cover {
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+#loan-apply .right-content-wide {
+	margin-top: auto;
+	margin-bottom: auto;
+}
