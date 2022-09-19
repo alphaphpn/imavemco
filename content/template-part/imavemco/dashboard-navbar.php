@@ -164,16 +164,16 @@
 										<a href="<?php echo $baklnk; ?>routes/main-menu" title="Main Menu">Main Menu</a>
 									</li>
 									<li>
-										<a href="#" class="">Writing</a>
+										<a href="#" class="d-none">Writing</a>
 									</li>
 									<li>
-										<a href="#" class="">Reading</a>
+										<a href="#" class="d-none">Reading</a>
 									</li>
 									<li>
-										<a href="#" class="">Discussion</a>
+										<a href="#" class="d-none">Discussion</a>
 									</li>
 									<li>
-										<a href="#" class="">Privacy</a>
+										<a href="#" class="d-none">Privacy</a>
 									</li>
 									<li class="">
 										<a href="<?php echo $baklnk; ?>routes/address" title="Address List">Address</a>
@@ -182,7 +182,7 @@
 							</div>
 						</li>
 
-						<li class="sidebar-dropdown">
+						<li class="sidebar-dropdown d-none">
 							<a href="#">
 								<i class="fas fa-palette"></i>
 								<span>Apperance</span>
@@ -208,7 +208,7 @@
 							</div>
 						</li>
 
-						<li class="sidebar-dropdown">
+						<li class="sidebar-dropdown d-none">
 							<a href="#">
 								<i class="fas fa-sticky-note"></i>
 								<span>Site</span>
@@ -255,19 +255,6 @@
 				</li>
 				<?php include_once "dashboard-navbar-menu.php"; ?>
 				<!-- Custom Menu -->
-
-				<!-- About -->
-				<li class="header-menu <?php echo $dabouttitle2_display; ?>">
-					<span><?php echo $dabouttitle2; ?></span>
-				</li>
-				<li class="<?php echo $dabouttitle2_display; ?>">
-					<a href="<?php echo $baklnk; ?>routes/dashboard-theme" title="Dashboard Theme">
-						<i class="fa fa-copyright"></i>
-						<span>Dashboard</span>
-						<span class="badge badge-pill badge-info">Theme</span>
-					</a>
-				</li>
-				<!-- About -->
 			</ul>
 		</div>
 		<!-- Menu  -->

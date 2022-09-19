@@ -5,7 +5,7 @@
 				<!-- Lending System - Start -->
 				<li class="sidebar-dropdown">
 					<a href="#" title="Borrowers">
-						<i class="far fa-file-alt"></i>
+						<i class="far fa-handshake"></i>
 						<span>Borrowers</span>
 					</a>
 					<div class="sidebar-submenu">
@@ -22,7 +22,7 @@
 
 				<li class="sidebar-dropdown">
 					<a href="#" title="Loans">
-						<i class="far fa-file-alt"></i>
+						<i class="fas fa-credit-card"></i>
 						<span>Loans</span>
 					</a>
 					<div class="sidebar-submenu">
@@ -41,8 +41,8 @@
 				</li>
 
 				<li class="sidebar-dropdown">
-					<a href="#" title="Re-Payment">
-						<i class="far fa-file-alt"></i>
+					<a href="#" title="Payment">
+						<i class="far fa-credit-card"></i>
 						<span>Payment</span>
 					</a>
 				</li>
@@ -50,7 +50,7 @@
 
 				<li class="sidebar-dropdown"> <!-- Collection sheet -->
 					<a href="#" title="Sample Menu">
-						<i class="far fa-file-alt"></i>
+						<i class="fas fa-money-check"></i>
 						<span>Collection sheet</span>
 					</a>
 					<div class="sidebar-submenu">
@@ -71,14 +71,14 @@
 
 				<li class="sidebar-dropdown">
 					<a href="#" title="Calendar">
-						<i class="far fa-calendar-alt"></i>
+						<i class="fas fa-calendar-alt"></i>
 						<span>Calendar</span>
 					</a>
 				</li>
 
 				<li class="sidebar-dropdown"> <!-- Reporst -->
 					<a href="#" title="Sample Menu">
-						<i class="far fa-file-alt"></i>
+						<i class="fas fa-file-alt"></i>
 						<span>Logs / Reports</span>
 					</a>
 					<div class="sidebar-submenu">
@@ -107,7 +107,7 @@
 					</div>
 				</li>
 
-				<li class="sidebar-dropdown"> <!-- Sample Menu 1 -->
+				<!-- li class="sidebar-dropdown"> <Sample Menu 1>
 					<a href="#" title="Sample Menu">
 						<i class="far fa-file-alt"></i>
 						<span>Sample Menu 1</span>
@@ -122,4 +122,4 @@
 							</li>
 						</ul>
 					</div>
-				</li>
+				</li -->

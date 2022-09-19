@@ -111,7 +111,7 @@
 											</a>
 											<div class="dropdown-menu dropdown-menu-right">
 												<a class="dropdown-item" href="'.$domainhome.'routes/mprofile">Profile</a>
-												<a class="dropdown-item" href="'.$domainhome.'routes/mcart">';
+												<a class="dropdown-item" href="'.$domainhome.'#">';
 
 												if (empty($sbtotalqty2)) {
 													
@@ -122,15 +122,15 @@
 												}
 
 												if ($_SESSION["gogfirstime"]==1) {
-													echo 'Cart</a>
-															<a class="dropdown-item" href="'.$domainhome.'routes/mpurchase">Purchase</a>
+													echo 'Payment</a>
+															<a class="dropdown-item" href="'.$domainhome.'#">Notification</a>
 															<a class="dropdown-item border-top" href="'.$domainhome.'routes/chngepss-firstime">Change Password</a>
 															<a id="#signout" class="dropdown-item" href="'.$domainhome.'inc/logout">Sign-out</a>
 														</div>
 													</li>';
 												} else {
-													echo 'Cart</a>
-															<a class="dropdown-item" href="'.$domainhome.'routes/mpurchase">Purchase</a>
+													echo 'Payment</a>
+															<a class="dropdown-item" href="'.$domainhome.'#">Notification</a>
 															<a class="dropdown-item border-top" href="'.$domainhome.'routes/chngepss">Change Password</a>
 															<a id="#signout" class="dropdown-item" href="'.$domainhome.'inc/logout">Sign-out</a>
 														</div>

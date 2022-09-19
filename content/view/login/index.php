@@ -44,7 +44,10 @@
 	<div class="mx-auto" style="max-width: 525px;">
 		<div class="card mt-4 p-5">
 			<div id="cardLogin" class="card-body">
-				<div>
+				<div class="text-center">
+					<a class="w-100 text-center" href="<?php echo $domainhome; ?>">
+						<img style="max-width: 120px;" src="<?php echo $domainhome.'content/theme/'.$themename.'/storage/img/'.$syslogo; ?>">
+					</a>
 					<div class="text-center mb-5">
 						<label id="loggdas"><a href="../login" class="btn">Sign in to start your session</a></label>
 					</div>
