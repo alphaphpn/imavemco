@@ -72,8 +72,13 @@
 						$_SESSION["phone"] = $phone;
 
 						$_SESSION["gogfirstime"] = $row['gogfirstime'];
-						
-						echo "<script>window.open('../../', '_self');</script>";
+
+						$ltapply = isset($_GET['aloan']) ? $_GET['aloan'] : "false";
+						if ($ltapply=true) {
+							echo "<script>window.open('../../routes/mprofile/', '_self');</script>";
+						} else {
+							echo "<script>window.open('../../', '_self');</script>";
+						}
 					}
 
 				} else {

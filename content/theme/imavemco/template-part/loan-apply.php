@@ -1,3 +1,17 @@
+<?php
+
+	if (isset($_SESSION["ulevpos"])) {
+		$applytoloan = $domainhome.'routes/applyloanow';
+		$btnaploan = 'Apply';
+	} elseif (isset($_SESSION["ulevpos"])==1 || isset($_SESSION["ulevpos"])==3) {
+		echo '<script>window.open("routes/dashboard","_self");</script>';
+	} else {
+		$applytoloan = $domainhome.'routes/signup';
+		$btnaploan = 'Sign-up';
+	}
+
+?>
+
 	<div class="container-fluid">
 		<div>
 			<div class="row">
@@ -9,11 +23,11 @@
 							<p>We offer online rapid cash loans to borrowers in other countries, as well as cash loans in person to borrowers in the local.</p>
 						</div>
 						<div class="card-body p-3">
-							<form id="apply-loan" method="get" class="needs-validation" action="<?php echo $domainhome; ?>routes/signup" novalidate>
+							<form id="apply-loan" method="get" class="needs-validation" action="<?php echo $applytoloan; ?>" novalidate>
 								<div class="form-group">
 									<label for="amount-want">Amount you want</label>
 									<div class="input-group mb-3">
-										<input type="number" class="form-control" id="amount-want" min="5000" placeholder="0.00" name="amount-want" value="5000.00" autofocus required>
+										<input type="number" class="form-control" id="amount-want" min="5000" placeholder="0.00" name="amountwant" value="5000.00" autofocus required>
 										<div class="valid-feedback">Valid.</div>
 										<div class="invalid-feedback">Please fill out this field.</div>
 									</div>
@@ -22,7 +36,7 @@
 								<div class="form-group">
 									<label for="amount-want">Type of Loan</label>
 									<div class="input-group mb-3">
-										<input id="type-loan" name="type-loan" type="text" class="form-control" placeholder="Type of Loan" list="typeLoan" autofocus required>
+										<input id="type-loan" name="typeloan" type="text" class="form-control" placeholder="Type of Loan" list="typeLoan" autofocus required>
 										<datalist id="typeLoan">
 										<?php
 											$cnn = new PDO("mysql:host={$host};dbname={$db}", $unameroot, $pw);
@@ -40,7 +54,7 @@
 							
 						</div>
 						<div class="card-footer bg-primary text-white p-3">
-							<button type="submit" class="btn btn-danger btn-lg w-100">Sign Up</button>
+							<button type="submit" class="btn btn-danger btn-lg w-100"><?php echo $btnaploan; ?></button>
 							</form>
 						</div>
 					</div>

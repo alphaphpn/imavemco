@@ -73,7 +73,7 @@
 		<?php
 			if ($sidelogdbr=1) {
 				?>
-					<a href="<?php echo $baklnk; ?>routes/dashboard" class="text-left">
+					<a href="<?php echo $baklnk; ?>" class="text-left">
 						<img src="<?php echo $baklnk.'content/theme/'.$themename.'/storage/img/'.$navbarlogo; ?>" class="dboard-top-left-logo">
 					</a>
 				<?php
@@ -150,38 +150,6 @@
 				<?php
 					if ($_SESSION["ulevpos"]==1) {
 						?>
-						<li class="sidebar-dropdown">
-							<a href="#">
-								<i class="fas fa-cogs"></i>
-								<span>Setting</span>
-							</a>
-							<div class="sidebar-submenu">
-								<ul>
-									<li>
-										<a href="<?php echo $baklnk; ?>routes/setgener" title="General Settings">General</a>
-									</li>
-									<li>
-										<a href="<?php echo $baklnk; ?>routes/main-menu" title="Main Menu">Main Menu</a>
-									</li>
-									<li>
-										<a href="#" class="d-none">Writing</a>
-									</li>
-									<li>
-										<a href="#" class="d-none">Reading</a>
-									</li>
-									<li>
-										<a href="#" class="d-none">Discussion</a>
-									</li>
-									<li>
-										<a href="#" class="d-none">Privacy</a>
-									</li>
-									<li class="">
-										<a href="<?php echo $baklnk; ?>routes/address" title="Address List">Address</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-
 						<li class="sidebar-dropdown d-none">
 							<a href="#">
 								<i class="fas fa-palette"></i>

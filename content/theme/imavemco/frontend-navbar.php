@@ -8,7 +8,7 @@
 <section id="secnavbr" class="<?php echo $navbarorrient; ?>" style="<?php echo 'background-color: '.$forthcolor.';'; ?>">
 	<nav id="navbar" class="navbar navbar-expand-sm navbar-danger <?php echo $contentwidth; ?>">
 		<a class="navbar-brand" href="<?php echo $domainhome; ?>">
-			<img id="mlogo" src="<?php echo $domainhome.'content/theme/'.$themename.'/storage/img/'.$syslogo; ?>">
+			<img id="mlogo" src="<?php echo $domainhome.'content/theme/'.$themename.'/storage/img/'.$navbarlogo; ?>">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
@@ -111,6 +111,7 @@
 											</a>
 											<div class="dropdown-menu dropdown-menu-right">
 												<a class="dropdown-item" href="'.$domainhome.'routes/mprofile">Profile</a>
+												<a class="dropdown-item" href="'.$domainhome.'#">Accounts</a>
 												<a class="dropdown-item" href="'.$domainhome.'#">';
 
 												if (empty($sbtotalqty2)) {

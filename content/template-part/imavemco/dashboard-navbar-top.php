@@ -48,20 +48,26 @@
 
 			<ul class="navbar-nav my-1 my-lg-0 ml-auto">
 				<li class="nav-item">
-					<div class="input-group m-1">
-						<div class="input-group-prepend">
-							<span class="input-group-text">
-								<i class='fas fa-search'></i>
-							</span>
-						</div>
-						<input type="text" class="form-control mr-5" placeholder="Search">
-					</div>
+					<a class="btn btn-light m-1" href="#" title="Notification"><i class="fa fa-bell"></i></a>
 				</li>
 				<li class="nav-item">
-					<a class="btn btn-light m-1" href="#"><i class="fa fa-bell"></i></a>
+					<a class="btn btn-light m-1" href="" title="Refresh"><i class="fas fa-sync-alt"></i></a>
 				</li>
-				<li class="nav-item">
-					<a class="btn btn-light m-1" href="#"><i class="fas fa-user-alt"></i></a>
+				<li class="nav-item dropdown">
+					<a class="btn btn-light m-1 dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-user-alt"></i></a>
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li><a class="dropdown-item" href="#">Profile</a></li>
+						<li>
+							<a class="dropdown-item" href="#">&lArr; Settings</a>
+							<ul class="submenu dropdown-menu">
+								<li><a class="dropdown-item" href="#">General</a></li>
+								<li><a class="dropdown-item" href="#">Main Menu</a></li>
+								<li><a class="dropdown-item" href="#">Address</a></li>
+							</ul>
+						</li>
+						<li><a class="dropdown-item border-top" href="<?php echo $baklnk; ?>routes/chngepss">Change Password </a></li>
+						<li><a class="dropdown-item" href="<?php echo $baklnk; ?>inc/logout">Logout </a></li>
+					</ul>
 				</li>
 			</ul>
 		</div>

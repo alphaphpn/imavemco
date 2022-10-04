@@ -14,6 +14,9 @@
 		$reglinkurl = $customlinkregister;
 	}
 
+	$username = isset($_GET['username']) ? $_GET['username'] : "";
+	$passcode = isset($_GET['passcode']) ? $_GET['passcode'] : "";
+
 ?>
 
 <script type="text/javascript">
@@ -25,15 +28,15 @@
 			if (tmp[0] != "") {
 				$_GET[decodeURIComponent(tmp[0])] = decodeURIComponent(tmp.slice(1).join("").replace("+", " "));
 				console.log(`${$_GET['glogin']}`);
-				xtruegmail = $_GET[decodeURIComponent(tmp[0])];
-				if (xtruegmail=1) {
+				console.log(`${$_GET['aloan']}`);
+				var xtruegmail = $_GET[decodeURIComponent(tmp[0])];
+				if (xtruegmail==1) {
 					$('#loginpost').addClass('d-none');
 					$('#ifregnorm').removeClass('d-none');
 					$("#glogin").detach().appendTo('#cardLogin');
 					$('#glogin').addClass('border border-warning rounded-lg m-auto');
 					$('#glogin').removeClass('position-absolute');
 					$('.card-footer .col-sm-6.mb-2.text-right').addClass('d-flex');
-
 				}
 			}//::END if
 		}//::END for
@@ -57,7 +60,7 @@
 				<form id="loginpost" method="post" class="needs-validation" novalidate>
 					<div class="form-group">
 						<div class="input-group mb-3">
-							<input type="text" class="form-control" id="username" placeholder="Username | e-mail" name="username" autofocus required>
+							<input type="text" class="form-control" id="username" placeholder="Username | e-mail" name="username" value="<?php echo $username; ?>" autofocus required>
 							<div class="input-group-prepend">
 								<span class="input-group-text">
 									<i class="fas fa-envelope-square" aria-hidden="true"></i>
@@ -70,7 +73,7 @@
 
 					<div class="form-group">
 						<div class="input-group mb-3" id="show_hide_password">
-							<input type="password" class="form-control password" id="passcode" placeholder="Password" name="passcode"  required>
+							<input type="password" class="form-control password" id="passcode" placeholder="Password" name="passcode" value="<?php echo $passcode; ?>" required>
 							<div class="input-group-prepend">
 								<span class="input-group-text">
 									<i class="fa fa-eye-slash" aria-hidden="true" onclick="PwHideShow()"></i>

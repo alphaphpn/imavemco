@@ -1,5 +1,8 @@
 <?php
 
+	$amountwant = isset($_GET['amountwant']) ? $_GET['amountwant'] : "";
+	$typeloan = isset($_GET['typeloan']) ? $_GET['typeloan'] : "";
+
 	if(empty($_SESSION["usercode"])) {
 		
 	} else {
@@ -48,9 +51,9 @@
 
 				<div class="form-group">
 					<div class="input-group mb-3" id="show_hide_password1">
-						<input type="password" class="form-control" id="passcode1" value="<?php // echo $randSSPass; ?>" placeholder="New Password" name="passcode1" required>
+						<input type="password" class="form-control" id="passcode1" value="<?php echo $randSSPass; ?>" placeholder="New Password" name="passcode1" maxlength="254" minlength="5" pattern="(?=.*\d)(?=.*[A-Za-z]).{6,254}" oninvalid="this.setCustomValidity('Note: Password must contain letters and numbers. Minimum of 6 and Maximum of 254 character.')" oninput="this.setCustomValidity('')" required>
 
-						<!-- maxlength="254" minlength="5" pattern="(?=.*\d)(?=.*[A-Za-z]).{6,254}" oninvalid="this.setCustomValidity('Note: Password must contain letters and numbers. Minimum of 6 and Maximum of 254 character.')" oninput="this.setCustomValidity('')" -->
+						<?php // maxlength="254" minlength="5" pattern="(?=.*\d)(?=.*[A-Za-z]).{6,254}" oninvalid="this.setCustomValidity('Note: Password must contain letters and numbers. Minimum of 6 and Maximum of 254 character.')" oninput="this.setCustomValidity('')" ?>
 
 						<div class="input-group-prepend">
 							<span class="input-group-text">
@@ -58,23 +61,30 @@
 							</span>
 						</div>
 						<div class="valid-feedback">Valid.</div>
-						<div class="invalid-feedback">Please fill out this field.</div>
+						<div class="invalid-feedback">Note: Password must contain letters and numbers. Minimum of 6 and Maximum of 12 character.</div>
 						<!-- div class="invalid-feedback">Note: Password must contain letters and numbers. Minimum of 6 and Maximum of 12 character.</div -->
 					</div>
 				</div>
 
-				<!-- div class="form-group">
-					<div class="input-group mb-3" id="show_hide_password2">
-						<input type="password" class="form-control" id="passcode2" placeholder="Re-type Password" name="passcode2" required>
-						<div class="input-group-prepend">
-							<span class="input-group-text">
-								<i class="fa fa-eye-slash" aria-hidden="true" onclick="PwHideShow2()"></i>
-							</span>
-						</div>
-						<div class="valid-feedback">Valid.</div>
-						<div class="invalid-feedback">Please fill out this field.</div>
-					</div>
-				</div -->
+				<?php
+					if ($typeloan) {
+						?>
+							<div class="form-group">
+								<div class="input-group mb-3">
+									<input type="checkbox" name="acceptme" class="form-control form-check-input" style="cursor: pointer;" required>
+									<p class="my-auto">I agree with the <a href="#">Privacy Policy</a> and <a href="#">Terms of Services</a>.</p>
+									<div class="valid-feedback">Valid.</div>
+									<div class="invalid-feedback">Please accept the terms to proceed.</div>
+								</div>
+							</div>
+						<?php
+					}
+				?>
+
+				<div class="d-none">
+					<input type="number" name="amountwant" value="<?php echo $amountwant; ?>">
+					<input type="text" name="typeloan" value="<?php echo $typeloan; ?>">
+				</div>
 				
 				<div class="row">
 					<div class="col-sm-6 mb-2">

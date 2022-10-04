@@ -1,12 +1,21 @@
 /** Custom Style **/
 
+#dbrd-navbar {
+	z-index: 1;
+}
+
 img.dboard-top-left-logo {
 	height: auto;
 	max-height: 56px;
+	max-width: 100%;
 }
 
 img.dboardimglogo {
 	width: 100%;
+}
+
+#dashboard-page-content .card-deck .card {
+	max-width: 320px;
 }
 
 .bg-transparent {
@@ -66,7 +75,7 @@ img.dboardimglogo {
 	text-align: center;
 	border-radius: 50%;
 	font-size: 3rem;
-	color: #98a4c7;
+	color: #fff;
 }
 
 #myDashB .w360center {
@@ -131,4 +140,47 @@ img.dboardimglogo {
 .dboard-nav-top {
 	z-index: 0;
 	height: auto;
+}
+
+@media (min-width: 992px) {
+	.dropdown-menu .dropdown-toggle:after {
+		border-top: .3em solid transparent;
+		border-right: 0;
+		border-bottom: .3em solid transparent;
+		border-left: .3em solid;
+	}
+
+	.dropdown-menu {
+		left: unset;
+	}
+
+	.dropdown-menu .dropdown-menu {
+		margin-left:0;
+		margin-right: 0;
+	}
+
+	.dropdown-menu li {
+		position: relative;
+	}
+
+	.dropdown-item {
+		text-align: right;
+	}
+
+	.nav-item .submenu { 
+		display: none;
+		position: absolute;
+		right:100%;
+		top:-7px;
+	}
+
+	.nav-item .submenu-left { 
+		right:100%;
+		left:auto;
+	}
+
+	.dropdown-menu > li:hover{ background-color: #f1f1f1 }
+	.dropdown-menu > li:hover > .submenu{
+		display: block;
+	}
 }
