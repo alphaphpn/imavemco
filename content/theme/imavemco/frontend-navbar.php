@@ -85,25 +85,6 @@
 											</div>
 										</li>';
 									} elseif ($_SESSION["ulevpos"]==6) {
-										$cnn_getorid = new PDO("mysql:host={$host};dbname={$db}", $unameroot, $pw);
-										$qry_getorid = "SELECT * FROM tbl_order_customer WHERE customer_id=:customeer_id2 AND remarks=:processed2 ORDER BY order_id DESC LIMIT 1";
-										$stmt_getorid = $cnn_getorid->prepare($qry_getorid);
-										$customeer_id2 = $_SESSION["usercode"];
-										$processed2 = 'Process';
-										$stmt_getorid->bindParam(':customeer_id2', $customeer_id2);
-										$stmt_getorid->bindParam(':processed2', $processed2);
-										$stmt_getorid->execute();
-										$row_order2 = $stmt_getorid->fetch(PDO::FETCH_ASSOC);
-										$curr_ordr_id2 = $row_order2['order_id'] ?? '0';
-
-										$cnn_getqty = new PDO("mysql:host={$host};dbname={$db}", $unameroot, $pw);
-										$qry_getqty = "SELECT SUM(qty) AS total_qty FROM tbl_order_item WHERE order_id=:order_id2";
-										$stmt_getqty = $cnn_getqty->prepare($qry_getqty);
-										$order_id2 = $curr_ordr_id2;
-										$stmt_getqty->bindParam(':order_id2', $order_id2);
-										$stmt_getqty->execute();
-										$row_getqty = $stmt_getqty->fetch(PDO::FETCH_ASSOC);
-										$sbtotalqty2 = $row_getqty['total_qty'];
 
 										echo '<li class="nav-item dropdown">
 											<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
@@ -113,14 +94,6 @@
 												<a class="dropdown-item" href="'.$domainhome.'routes/mprofile">Profile</a>
 												<a class="dropdown-item" href="'.$domainhome.'#">Accounts</a>
 												<a class="dropdown-item" href="'.$domainhome.'#">';
-
-												if (empty($sbtotalqty2)) {
-													
-												} else {
-													echo '<span id="nmbtemi">';
-													echo $sbtotalqty2;
-													echo '</span> ';
-												}
 
 												if ($_SESSION["gogfirstime"]==1) {
 													echo 'Payment</a>
